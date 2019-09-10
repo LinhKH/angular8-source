@@ -1,0 +1,11 @@
+<h1>Login to your account using Google</h1>
+<button mat-button color="danger" (click)="login();">Login</button>
+<div *ngIf="user">
+    <h3>Hello {{ user.displayName }}</h3>
+    <img [src]="user.photoURL">
+    <button mat-button color="primary" (click)="afService.logout();">Logout</button>
+</div>
+<div *ngIf="user">
+    <p>Subcriber: {{ user.roles?.subcriber ? true : false }}</p>
+    <p>Admin: {{ user.roles?.admin ? true : false }}</p>
+</div>
