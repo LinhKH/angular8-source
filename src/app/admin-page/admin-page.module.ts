@@ -10,6 +10,7 @@ import { PostsComponent } from './posts/posts.component';
 import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
 import { AdminPageComponent } from './admin-page.component';
 import { MaterialModule } from './material.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MaterialModule } from './material.module';
   imports: [
     CommonModule,
     AdminRoutingModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ]
 })
 export class AdminPageModule { }

@@ -22,6 +22,7 @@ import { environment } from 'src/environments/environment';
 import { AfService } from './providers/af.service';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
+import { MenusService } from './services/menus/menus.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore
     AngularFirestoreModule
   ],
   providers: [
-    AfService, AuthGuard, SubcriberGuard
+    AfService, AuthGuard, SubcriberGuard, MenusService
   ],
   bootstrap: [AppComponent],
 })
