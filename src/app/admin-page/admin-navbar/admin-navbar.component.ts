@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { User } from 'src/app/providers/user';
-import { AfService } from 'src/app/providers/af.service';
 
 @Component({
   selector: 'admin-navbar',
@@ -10,15 +8,12 @@ import { AfService } from 'src/app/providers/af.service';
 })
 export class AdminNavbarComponent implements OnInit {
 
-  user: User;
   constructor(
-    public afService: AfService
+    
   ) { }
 
   ngOnInit() {
-    this.afService.user$.subscribe(user => {
-      this.user = user;
-    })
+    
   }
 
 }

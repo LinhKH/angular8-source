@@ -10,11 +10,10 @@ import { PageNotFoundComponent } from '../page-not-found/page-not-found.componen
 
 const routesAdmin: Routes = [
   {
-    path: '',
-    component: AdminPageComponent,
+    path: '', component: AdminPageComponent, 
     children: [
       {
-        path: '', pathMatch: 'full',
+        path: '',pathMatch: 'full',
         redirectTo: 'dashboard'
       },
       {
@@ -28,11 +27,7 @@ const routesAdmin: Routes = [
       {
         path: 'posts',
         component: PostsComponent
-      },
-      // {
-      //   path: '**',
-      //   component: PageNotFoundComponent
-      // }
+      }
     ]
   },
 ];

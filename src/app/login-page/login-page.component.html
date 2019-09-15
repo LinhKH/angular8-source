@@ -1,11 +1,31 @@
-<h1>Login to your account using Google</h1>
-<button mat-button color="danger" (click)="login();">Login</button>
-<div *ngIf="user">
-    <h3>Hello {{ user.displayName }}</h3>
-    <img [src]="user.photoURL">
-    <button mat-button color="primary" (click)="afService.logout();">Logout</button>
-</div>
-<div *ngIf="user">
-    <p>Subcriber: {{ user.roles?.subcriber ? true : false }}</p>
-    <p>Admin: {{ user.roles?.admin ? true : false }}</p>
+<div class="login-container">
+    <div class="login-box animated fadeInDown">
+        <div class="login-logo"></div>
+        <div class="login-body">
+            <div class="login-title"><strong>WELCOME TO PRODRIVERS DB</strong></div>
+            <alert [addClass]="'full-width'"></alert>
+            <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate class="form-horizontal" method="post">
+                <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" placeholder="ユーザーID" name="user_id" [(ngModel)]="model.user_id" #username="ngModel" required />
+                        <div *ngIf="f.submitted && !username.valid" class="help-block">User ID is required</div>
+                    </div>
+                </div>
+                <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+                    <div class="col-md-12">
+                        <input type="password" class="form-control" placeholder="パスワード" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+                        <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <a [routerLink]="['/forgot']" class="btn btn-link">パスワード忘れた場合はこちら</a>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-info btn-block" [disabled]="loading">送信</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
